@@ -98,21 +98,23 @@ class WallPost extends Component {
               <Avatar style={avatarStyle}>{post.user.charAt(0)}</Avatar>
             }
             action={
-              <Grid
-                container
-                direction="row-reverse">
-                <Grid item>
-                  <IconButton aria-label="edit" onClick={this.editPost}>
-                    <EditIcon />
-                  </IconButton>
-                </Grid>
+              <div hidden={this.props.user !== post.user}>
+                <Grid
+                  container
+                  direction="row-reverse">
+                  <Grid item>
+                    <IconButton aria-label="edit" onClick={this.editPost}>
+                      <EditIcon />
+                    </IconButton>
+                  </Grid>
 
-                <Grid item>
-                  <IconButton aria-label="delete" onClick={this.toggleDeleteDialog}>
-                    <DeleteIcon />
-                  </IconButton>
+                  <Grid item>
+                    <IconButton aria-label="delete" onClick={this.toggleDeleteDialog}>
+                      <DeleteIcon />
+                    </IconButton>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </div>
           }
             title={post.user}
           />
@@ -137,10 +139,12 @@ WallPost.propTypes = {
   editingPostId: PropTypes.string,
   editPost: PropTypes.func.isRequired,
   deletePost: PropTypes.func.isRequired,
+  user: PropTypes.string.isRequired
 }
 
 const mapStateToProps = state => ({
-  editingPostId: state.posts.editingPostId
+  editingPostId: state.posts.editingPostId,
+  user: state.login.user
 });
 
 export default connect(mapStateToProps, { updatePost, editPost, deletePost })(WallPost);
