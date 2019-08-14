@@ -1,0 +1,11 @@
+#submit-button {
+  display: inline;
+}
+
+.error {
+  color: red
+}
+
+.warning {
+  color: blue
+}
