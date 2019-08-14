@@ -4,11 +4,15 @@ import renderField from './FormHelper'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { initialize } from 'redux-form';
+import Button from '@material-ui/core/Button';
 
 const required = value => (value || typeof value === 'number' ? undefined : 'Required')
 
 class EditPostForm extends Component{
   render () {
+    const style = {
+      margin: 10,
+    };
       const { error, handleSubmit, pristine, submitting } = this.props
       return (
         <form onSubmit={handleSubmit}>
@@ -20,7 +24,12 @@ class EditPostForm extends Component{
           </div>
           {error && <strong>{error}</strong>}
 
-          <button type="submit" disabled={pristine || submitting}>Update</button>
+          <Button
+          style={style}
+            type="submit"
+            disabled={pristine || submitting}
+            variant="contained"
+            color="primary">Update</Button>
         </form>
       )
   }

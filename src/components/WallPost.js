@@ -18,7 +18,6 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import indigo from '@material-ui/core/colors/indigo';
-import purple from '@material-ui/core/colors/purple';
 
 // A post as it appears on the ReactiWall
 class WallPost extends Component {
@@ -67,7 +66,7 @@ class WallPost extends Component {
     background: indigo[400]
   };
   const headerStyle = {
-    background: purple[100]
+    background: indigo[200]
   };
   return (
     <Grid item xs={7}>

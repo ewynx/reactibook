@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import './styles.css'
 import PostForm from './forms/PostForm'
 import { SubmissionError } from 'redux-form'
-import purple from '@material-ui/core/colors/purple';
+import indigo from '@material-ui/core/colors/indigo';
 
 class CreateTextPost extends Component {
   constructor (props) {
@@ -38,7 +38,7 @@ class CreateTextPost extends Component {
   render () {
     const style = {
       padding: '10px',
-      background: purple[100]
+      background: indigo[200]
     };
 
     return (

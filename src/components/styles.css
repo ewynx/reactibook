@@ -3,9 +3,14 @@
 }
 
 .error {
-  color: red
+  color: #DD2C00;
+  padding: 10px
 }
 
 .warning {
   color: blue
+}
+
+label, input {
+  margin: 10px;
 }

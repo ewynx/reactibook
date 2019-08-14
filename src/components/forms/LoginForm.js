@@ -2,17 +2,16 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import Button from '@material-ui/core/Button';
 import '../styles.css'
+import purple from '@material-ui/core/colors/purple';
+import TextField from '@material-ui/core/TextField';
 
 const required = value => (value || typeof value === 'number' ? undefined : 'Required')
 const renderSingleField = ({input, label, type, meta: { touched, error, warning }}) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      <br/>{touched &&
-        ((error && <span className="error">{error}</span>) ||
-      (warning && <span>{warning}</span>))}
-    </div>
+  <div style={{ margin: 20}}>
+    <TextField {...input} placeholder={label} type={type}/>
+    <br/>{touched &&
+      ((error && <span className="error">{error}</span>) ||
+    (warning && <span>{warning}</span>))}
   </div>
 )
 
@@ -44,6 +43,7 @@ let LoginForm = props => {
 
       <br/>
       <Button
+        margin={2}
         type="submit"
         variant="contained"
         color="primary"

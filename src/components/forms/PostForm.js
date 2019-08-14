@@ -11,19 +11,22 @@ let PostForm = props => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <div>
-        <label htmlFor="postContent">What's on your mind?</label>
+      <div style={{padding:10}}>
+        <label htmlFor="postContent"><strong>What's on your mind?</strong></label>
         <Field
           name="postContent"
           component={renderField}
           validate={required} />
       </div>
 
-      <br/>
-      <label>Share with...</label>
+      <label><strong>Share with...</strong></label>
       <div>
         <label>
-          <Field name="shareWith" component="input" type="radio" value="public" />
+          <Field
+            name="shareWith"
+            component="input"
+            type="radio"
+            value="public" />
           {' '}
           Public
         </label>

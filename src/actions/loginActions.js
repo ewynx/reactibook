@@ -10,15 +10,15 @@ export const login = (data) => (dispatch) => {
           dispatch({
             type: LOGGED_IN,
             payload: data.username
-          })
-        } else {
-          console.log("Login error");
-          dispatch({
-            type: LOGIN_ERROR,
-            payload: "Unknown user or wrong password"
-          })
+          });
+          return;
         }
       }
+      console.log("Login error");
+      dispatch({
+        type: LOGIN_ERROR,
+        payload: "Unknown user or wrong password"
+      });
     })
     .catch(function(error) {
         console.log("Error getting documents from users table: ", error);
